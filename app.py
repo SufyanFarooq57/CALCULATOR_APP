@@ -36,4 +36,4 @@ def open_browser():
 if __name__ == '__main__':
     if not app.debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         threading.Timer(1, open_browser).start()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
