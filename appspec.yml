@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/CALCULATOR_APP
+permissions:
+  - object: /home/ubuntu/CALCULATOR_APP
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+hooks:
+  AfterInstall:
+    - location: scripts/after_deploy.sh
+      timeout: 300
+      runas: ubuntu
